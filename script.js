@@ -13,3 +13,8 @@ let multiply=function(x,y){
 let divide=function(x,y){
     return x/y
 }
+
+
+let firstNumber
+let operator
+let nextNumber
