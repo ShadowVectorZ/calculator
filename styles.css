@@ -9,7 +9,7 @@
 background-color:black;
 border-bottom:solid 1px red;
 height: 150px;
-width:300px;
+width:350px;
 display:flex;
 justify-content:center;
 align-items:center;
@@ -18,13 +18,13 @@ align-items:center;
 #display{
     background-color:gray;
     height:100px;
-    width:250px;
+    width:300px;
 }
 
 #buttonContainer{
     background-color:black;
     height:400px;
-    width:300px;
+    width:350px;
     display:flex;
     justify-content:space-around;
     flex-wrap:wrap;
