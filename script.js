@@ -31,7 +31,40 @@ let operate= function(firstNumber,operator,secondNumber){
         break;
         case '/': return divide(firstNumber,secondNumber);
         break;
-        default: add(firstNumber,secondNumber)
-
      }
 }
+
+let display=document.querySelector('#display')
+
+
+let buttons=document.querySelector('#buttonContainer')
+
+buttons.addEventListener('click',(event)=>{
+   if (event.target.id==='clear'){
+    display.textContent=''
+   }
+   else if (event.target.tagName==='BUTTON'){
+      display.textContent=event.target.innerText
+   }
+})
+
+
+
+
+
+let test=document.querySelector('#test')
+test.addEventListener('click', ()=>{
+    alert('ITS A TRAP')
+})
+
+
+
+test.addEventListener('click', ()=>{
+    alert("I'M RUINED")
+})
+
+
+
+
+
+
