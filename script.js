@@ -35,8 +35,6 @@ let operate= function(firstNumber,operator,secondNumber){
 }
 
 let display=document.querySelector('#display')
-
-
 let buttons=document.querySelector('#buttonContainer')
 
 buttons.addEventListener('click',(event)=>{
@@ -48,20 +46,6 @@ buttons.addEventListener('click',(event)=>{
    }
 })
 
-
-
-
-
-let test=document.querySelector('#test')
-test.addEventListener('click', ()=>{
-    alert('ITS A TRAP')
-})
-
-
-
-test.addEventListener('click', ()=>{
-    alert("I'M RUINED")
-})
 
 
 
