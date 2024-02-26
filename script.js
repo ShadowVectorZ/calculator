@@ -35,36 +35,55 @@ let operate= function(firstNumber,operator,secondNumber){
 }
 
 let display=document.querySelector('#display')
+let secondDisplay=document.querySelector('#secondDisplay')
 let buttons=document.querySelector('#buttonContainer')
 let displayValue
+let secondDisplayValue
 let nextInteger
 buttons.addEventListener('click',(event)=>{
    if (event.target.id==='clear'){
     display.textContent=''
+    secondDisplay.textContent=''
    
    }
    else if (event.target.id==='+'){
     operator='+'
+    display.textContent=secondDisplayValue
+    secondDisplay.textContent=''
+    displayValue=''
+    display.textContent+= displayValue.concat('',operator)
    }
 
    else if (event.target.id==='-'){
     operator='-'
+    display.textContent=secondDisplayValue
+    secondDisplay.textContent=''
+    displayValue=''
+    display.textContent+= displayValue.concat('',operator)
    }
    else if (event.target.id==='*'){
     operator='*'
+    display.textContent=secondDisplayValue
+    secondDisplay.textContent=''
+    displayValue=''
+    display.textContent+= displayValue.concat('',operator)
     
    }
    else if (event.target.id==='/'){
     operator='/'
+    display.textContent=secondDisplayValue
+    secondDisplay.textContent=''
+    displayValue=''
+    display.textContent+= displayValue.concat('',operator)
    }
    else if (event.target.tagName==='BUTTON'){
      nextInteger=event.target.innerText
-    displayValue='' 
+    secondDisplayValue='' 
     String(nextInteger)
-      String(displayValue)
-      display.textContent+=displayValue.concat('',nextInteger)
+      String(secondDisplayValue)
+      secondDisplay.textContent+=secondDisplayValue.concat('',nextInteger)
       nextInteger=''
-      displayValue=display.textContent
+      secondDisplayValue=secondDisplay.textContent
    }
 })
 
