@@ -86,6 +86,7 @@ buttons.addEventListener('click',(event)=>{
    let result=operate(firstNumber,operator,secondNumber)
    display.textContent=''
    secondDisplay.textContent=result
+   secondDisplayValue=result
    operator=''
    }
 
