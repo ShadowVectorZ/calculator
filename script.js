@@ -1,6 +1,6 @@
-let firstNumber
+let firstNumber=null
 let operator 
-let secondNumber
+let secondNumber=null
 
 let add=function(firstNumber,secondNumber){
     
@@ -16,11 +16,9 @@ let multiply=function(firstNumber,secondNumber){
 }
 
 let divide=function(firstNumber,secondNumber){
-    return firstNumber/secondNumber
+    if(secondNumber===0){return "can't divide by zero"}
+    else {return firstNumber/secondNumber}
 }
-
-
-
 
 let operate= function(firstNumber,operator,secondNumber){
      switch(operator){
@@ -41,54 +39,98 @@ let buttons=document.querySelector('#buttonContainer')
 let displayValue
 let secondDisplayValue
 let nextInteger
+
+
 buttons.addEventListener('click',(event)=>{
-   if (event.target.id==='clear'){
+
+    if (event.target.id==='clear'){
     display.textContent=''
     secondDisplay.textContent=''
-   
+    firstNumber=null
+    secondNumber=null   
    }
+
    else if (event.target.id==='+'){
+    if (!(secondNumber===null)&&(!(firstNumber===null))){
+        let result=operate(firstNumber,operator,secondNumber)
+       display.textContent=''
+       secondDisplay.textContent=result
+       secondDisplayValue=result
+       operator=''
+            }
     operator='+'
     display.textContent=secondDisplayValue
     secondDisplay.textContent=''
     displayValue=''
     firstNumber=display.textContent
     display.textContent+= displayValue.concat('',operator)
-    
+    secondNumber=null
    }
 
    else if (event.target.id==='-'){
+    if (!(secondNumber===null)&&(!(firstNumber===null))){
+    let result=operate(firstNumber,operator,secondNumber)
+   display.textContent=''
+   secondDisplay.textContent=result
+   secondDisplayValue=result
+   operator=''
+        }
     operator='-'
     display.textContent=secondDisplayValue
     secondDisplay.textContent=''
     displayValue=''
     firstNumber=display.textContent
     display.textContent+= displayValue.concat('',operator)
+    secondNumber=null
    }
+
    else if (event.target.id==='*'){
+    if (!(secondNumber===null)&&(!(firstNumber===null))){
+        let result=operate(firstNumber,operator,secondNumber)
+       display.textContent=''
+       secondDisplay.textContent=result
+       secondDisplayValue=result
+       operator=''
+            }
     operator='*'
     display.textContent=secondDisplayValue
     secondDisplay.textContent=''
     displayValue=''
     firstNumber=display.textContent
     display.textContent+= displayValue.concat('',operator)
-    
+    secondNumber=null
    }
+
    else if (event.target.id==='/'){
+    if (!(secondNumber===null)&&(!(firstNumber===null))){
+        let result=operate(firstNumber,operator,secondNumber)
+       display.textContent=''
+       secondDisplay.textContent=result
+       secondDisplayValue=result
+       operator=''
+            }
     operator='/'
     display.textContent=secondDisplayValue
     secondDisplay.textContent=''
     displayValue=''
     firstNumber=display.textContent
     display.textContent+= displayValue.concat('',operator)
+    secondNumber=null
    }
+
    else if (event.target.id==='='){
+    if ((secondNumber=='0')&&(operator='/')){
+        secondDisplay.textContent="can't divide by zero"
+       }
+    else if (!(secondNumber===null)&&(!(firstNumber===null))){
    let result=operate(firstNumber,operator,secondNumber)
    display.textContent=''
    secondDisplay.textContent=result
    secondDisplayValue=result
    operator=''
+   firstNumber=null
    }
+}
 
    else if (event.target.tagName==='BUTTON'){
      nextInteger=event.target.innerText
@@ -105,6 +147,5 @@ buttons.addEventListener('click',(event)=>{
 
 
 
-
-
+   
 
