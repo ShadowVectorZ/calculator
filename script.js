@@ -1,9 +1,10 @@
 let firstNumber
 let operator 
-let nextNumber
+let secondNumber
 
 let add=function(firstNumber,secondNumber){
-    return firstNumber+secondNumber
+    
+    return Number(firstNumber)+Number(secondNumber)
 }
 
 let subtract=function(firstNumber,secondNumber){
@@ -51,7 +52,9 @@ buttons.addEventListener('click',(event)=>{
     display.textContent=secondDisplayValue
     secondDisplay.textContent=''
     displayValue=''
+    firstNumber=display.textContent
     display.textContent+= displayValue.concat('',operator)
+    
    }
 
    else if (event.target.id==='-'){
@@ -59,6 +62,7 @@ buttons.addEventListener('click',(event)=>{
     display.textContent=secondDisplayValue
     secondDisplay.textContent=''
     displayValue=''
+    firstNumber=display.textContent
     display.textContent+= displayValue.concat('',operator)
    }
    else if (event.target.id==='*'){
@@ -66,6 +70,7 @@ buttons.addEventListener('click',(event)=>{
     display.textContent=secondDisplayValue
     secondDisplay.textContent=''
     displayValue=''
+    firstNumber=display.textContent
     display.textContent+= displayValue.concat('',operator)
     
    }
@@ -74,8 +79,16 @@ buttons.addEventListener('click',(event)=>{
     display.textContent=secondDisplayValue
     secondDisplay.textContent=''
     displayValue=''
+    firstNumber=display.textContent
     display.textContent+= displayValue.concat('',operator)
    }
+   else if (event.target.id==='='){
+   let result=operate(firstNumber,operator,secondNumber)
+   display.textContent=''
+   secondDisplay.textContent=result
+   operator=''
+   }
+
    else if (event.target.tagName==='BUTTON'){
      nextInteger=event.target.innerText
     secondDisplayValue='' 
@@ -84,6 +97,7 @@ buttons.addEventListener('click',(event)=>{
       secondDisplay.textContent+=secondDisplayValue.concat('',nextInteger)
       nextInteger=''
       secondDisplayValue=secondDisplay.textContent
+      secondNumber=secondDisplay.textContent
    }
 })
 
