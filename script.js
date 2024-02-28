@@ -50,6 +50,12 @@ buttons.addEventListener('click',(event)=>{
     secondNumber=null   
    }
 
+   else if (event.target.id==='delete'){
+    secondDisplayValue=secondDisplayValue.slice(0,-1);
+    secondNumber=secondDisplayValue
+    secondDisplay.textContent=secondDisplayValue
+   }
+
    else if (event.target.id==='+'){
     if (!(secondNumber===null)&&(!(firstNumber===null))){
         let result=operate(firstNumber,operator,secondNumber)
@@ -118,7 +124,7 @@ buttons.addEventListener('click',(event)=>{
     secondNumber=null
    }
 
-   else if (event.target.id==='='){
+   else if (event.target.id==='equals'){
     if ((secondNumber=='0')&&(operator='/')){
         secondDisplay.textContent="can't divide by zero"
        }
