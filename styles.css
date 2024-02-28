@@ -50,5 +50,17 @@ button{
     height:65px;
     width:65px;
     
-    border-radius:50%
+    
+}
+
+#clear{
+    width:130px;
+}
+
+#delete{
+    width:130px;
+}
+
+#equals{
+    width:130px
 }
