@@ -56,7 +56,7 @@ buttons.addEventListener('click',(event)=>{
     secondDisplay.textContent=secondDisplayValue
    }
 
-   else if (event.target.id==='+'){
+   else if (event.target.id==='plus'){
     if (!(secondNumber===null)&&(!(firstNumber===null))){
         let result=operate(firstNumber,operator,secondNumber)
        display.textContent=''
@@ -73,7 +73,7 @@ buttons.addEventListener('click',(event)=>{
     secondNumber=null
    }
 
-   else if (event.target.id==='-'){
+   else if (event.target.id==='subtract'){
     if (!(secondNumber===null)&&(!(firstNumber===null))){
     let result=operate(firstNumber,operator,secondNumber)
    display.textContent=''
@@ -90,7 +90,7 @@ buttons.addEventListener('click',(event)=>{
     secondNumber=null
    }
 
-   else if (event.target.id==='*'){
+   else if (event.target.id==='multiply'){
     if (!(secondNumber===null)&&(!(firstNumber===null))){
         let result=operate(firstNumber,operator,secondNumber)
        display.textContent=''
@@ -107,7 +107,7 @@ buttons.addEventListener('click',(event)=>{
     secondNumber=null
    }
 
-   else if (event.target.id==='/'){
+   else if (event.target.id==='divide'){
     if (!(secondNumber===null)&&(!(firstNumber===null))){
         let result=operate(firstNumber,operator,secondNumber)
        display.textContent=''
